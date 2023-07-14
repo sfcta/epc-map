@@ -157,10 +157,14 @@
           <h5>MAP LAYERS</h5>
           <p>Add additional geographic data to the map.</p>
         
+          <div class="ui colorsup toggle checkbox">
+            <input type="checkbox" value="epc2021_neighborhood" v-model="addLayers">
+            <label><h5>Equity Priority Communities Neighborhoods</h5></label>
+          </div>
           <div class="ui colorhin toggle checkbox">
             <input type="checkbox" value="hin2017" v-model="addLayers">
             <label><h5>High Injury Network</h5></label>
-          </div>          
+          </div>
           <div class="ui colorsup toggle checkbox">
             <input type="checkbox" value="sup_district_boundaries_2022" v-model="addLayers">
             <label><h5>Supervisorial District Boundaries</h5></label>

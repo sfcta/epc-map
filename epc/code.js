@@ -55,8 +55,12 @@ let stripes = new L.StripePattern({weight:3,spaceWeight:3,opacity:0.6,angle:135}
 
 const ADDLAYERS = [
   {
-    view: 'sup_district_boundaries_2022', name: 'Supervisorial District Boundaries',
+    view: 'epc2021_neighborhood', name: 'Equity Priority Communities Neighborhoods',
     style: { opacity: 1, weight: 3, color: '#730073', fillOpacity: 0, interactive: false},
+  },
+  {
+    view: 'sup_district_boundaries_2022', name: 'Supervisorial District Boundaries',
+    style: { opacity: 1, weight: 3, color: 'navy', fillOpacity: 0, interactive: false},
   },
   {
     view: 'sfparks', name: 'Major Parks',
