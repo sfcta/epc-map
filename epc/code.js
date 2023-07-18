@@ -56,7 +56,7 @@ let stripes = new L.StripePattern({weight:3,spaceWeight:3,opacity:0.6,angle:135}
 const ADDLAYERS = [
   {
     view: 'epc2021_neighborhood', name: 'Equity Priority Communities Neighborhoods',
-    style: { opacity: 1, weight: 3, color: '#730073', fillOpacity: 0, interactive: false},
+    style: { opacity: 1, weight: 3, color: '#730073', fillOpacity: 0, interactive: true},
   },
   {
     view: 'sup_district_boundaries_2022', name: 'Supervisorial District Boundaries',
@@ -71,6 +71,14 @@ const ADDLAYERS = [
     style: { opacity: 1, weight: 3, color: '#FF8C00', interactive: false},
   },
 ]
+
+function onEachFeature(feature, layer) {
+  if (feature.neighborhood) { // if exist
+    // bindPopup (click, anchored to click location)
+    // vs bindTooltip (hover, but anchored to a static location on the shape)
+    layer.bindPopup(feature.neighborhood);
+  }
+}
 
 
 // some important global variables.
@@ -191,6 +199,7 @@ async function fetchAddLayers() {
         feat['geometry'] = JSON.parse(feat.geometry);
       }
       let lyr = L.geoJSON(features, {
+        onEachFeature: onEachFeature,
         style: item.style,
         pane: 'shadowPane',
       }).addTo(mymap);
@@ -828,4 +837,3 @@ function onCaptchaExpired() {
 
 
 initialPrep();
-
