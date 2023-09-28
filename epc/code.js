@@ -63,7 +63,7 @@ const ADDLAYERS = [
     style: { opacity: 1, weight: 2, color: 'grey', fillPattern: stripes, interactive: false},
   },
   {
-    view: 'hin2017', name: 'High Injury Network',
+    view: 'hin2022', name: 'High Injury Network',
     style: { opacity: 1, weight: 3, color: '#FF8C00', interactive: false},
   },
 ]
