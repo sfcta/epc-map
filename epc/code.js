@@ -64,11 +64,11 @@ const ADDLAYERS = [
   },
   {
     view: 'sfparks', name: 'Major Parks',
-    style: { opacity: 1, weight: 2, color: 'grey', fillPattern: stripes, interactive: false},
+    style: { opacity: 1, weight: 2, color: 'green', fillPattern: stripes, interactive: false},
   },
   {
     view: 'hin2022', name: 'High Injury Network',
-    style: { opacity: 1, weight: 3, color: '#FF8C00', interactive: false},
+    style: { opacity: 1, weight: 3, color: 'grey', interactive: false},
   },
 ]
 
