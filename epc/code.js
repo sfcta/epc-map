@@ -64,7 +64,7 @@ const ADDLAYERS = [
   },
   {
     view: 'sfparks', name: 'Major Parks',
-    style: { opacity: 1, weight: 2, color: 'green', fillPattern: stripes, interactive: false},
+    style: { opacity: 1, weight: 2, color: 'green', interactive: false},
   },
   {
     view: 'hin2022', name: 'High Injury Network',
@@ -582,7 +582,11 @@ function showExtraLayers(e) {
     mymap.removeLayer(addLayerStore[lyr]);
   }
   for (let lyr of app.addLayers) {
-    addLayerStore[lyr].addTo(mymap);
+    if (addLayerStore[lyr]) {
+      addLayerStore[lyr].addTo(mymap);
+    } else {
+      console.log(`Layer not found in store: ${lyr}`);
+    }
   }
 }
 
