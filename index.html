@@ -125,7 +125,18 @@
   <div id="panel" v-bind:class="{ shrunken: isPanelHidden}">
       <div id="preheader">
         <hr/>
-        <h3 class="apptitle">Equity Priority Communities</h3>
+        <h3 class="apptitle">Equity Priority Communities (2025)</h3>
+
+        <p style="
+          margin: -5px 0 2px 0;
+          text-align: center;
+          font-size: 12px;
+          font-weight: normal;
+          color: #d9d9d9;
+        ">
+          Based on U.S. Census 2018-2022 American Community Survey (ACS) 5-year estimates
+        </p>
+
         <div id="helpbar">
             <button class="ui mini right labeled icon color1 button"
                     v-on:click="clickToggleHelp">
@@ -158,11 +169,11 @@
           <p>Add additional geographic data to the map.</p>
         
           <div class="ui colorepc toggle checkbox">
-            <input type="checkbox" value="epc2021_neighborhood" v-model="addLayers">
+            <input type="checkbox" value="epc2025_neighborhood" v-model="addLayers">
             <label><h5>Equity Priority Communities Neighborhoods</h5></label>
           </div>
           <div class="ui colorhin toggle checkbox">
-            <input type="checkbox" value="hin2022" v-model="addLayers">
+            <input type="checkbox" value="hin2024" v-model="addLayers">
             <label><h5>High Injury Network</h5></label>
           </div>
           <div class="ui colorsup toggle checkbox">
@@ -226,7 +237,7 @@
             &nbsp;OK&nbsp;
           </button>
 
-          <button v-on:click="this.window.open('/assets/SF_EPCs_2021.zip')"
+          <button v-on:click="this.window.open('/assets/SF_EPCs_2025.zip')"
                   class="small ui right labeled icon floated color1 button"
                   style="margin-right:5px">
                   <i class="icon download"></i>
