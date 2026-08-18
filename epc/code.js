@@ -55,7 +55,7 @@ let stripes = new L.StripePattern({weight:3,spaceWeight:3,opacity:0.6,angle:135}
 
 const ADDLAYERS = [
   {
-    view: 'epc2021_neighborhood', name: 'Equity Priority Communities Neighborhoods',
+    view: 'epc2025_neighborhood', name: 'Equity Priority Communities Neighborhoods',
     style: { opacity: 1, weight: 3, color: '#730073', fillOpacity: 0, interactive: true},
   },
   {
@@ -67,7 +67,7 @@ const ADDLAYERS = [
     style: { opacity: 1, weight: 2, color: 'green', interactive: false},
   },
   {
-    view: 'hin2022', name: 'High Injury Network',
+    view: 'hin2024', name: 'High Injury Network',
     style: { opacity: 1, weight: 3, color: 'grey', interactive: false},
   },
 ]
@@ -83,8 +83,8 @@ function onEachFeature(feature, layer) {
 
 // some important global variables.
 const API_SERVER = 'https://api.sfcta.org/api/';
-const GEO_VIEW = 'epc2021';
-const DATA_VIEW = 'epc2021';
+const GEO_VIEW = 'epc2025';
+const DATA_VIEW = 'epc2025';
 const COMMENT_SERVER = 'https://api.sfcta.org/commapi/';
 const COMMENT_VIEW = 'epc_comment';
 
@@ -122,10 +122,14 @@ const METRIC_DESC_SHORT = {'min': 'Minority Pop','linc': 'Low-Income Pop','o75':
                       'lep': 'Low English Pop','zvhh': 'Zero-Veh HH','spfam': 'Single-Parent Fam','rentb': 'Rent-Burdened HH'
 };
 const VARMAP = [
+  {'min':'pct_poc','linc':'pct_below2','o75':'pct_over75','disab':'pct_disab',
+  'lep':'pct_lep','zvhh':'pct_zvhhs','spfam':'pct_spfam','rentb':'pct_hus_re'},
+  // Update in 08/2026: MTC uses "person of color" to refer to minority, so we add here.
+  // SFCTA uses "minority" to refer to non-white population.
   {'min':'pct_minori','linc':'pct_below2','o75':'pct_over75','disab':'pct_disab',
   'lep':'pct_lep','zvhh':'pct_zvhhs','spfam':'pct_spfam','rentb':'pct_hus_re'},
   {'min':'pct_mino_1','linc':'pct_lowinc','o75':'pct_over_1','disab':'pct_disab_',
-  'lep':'pct_lep_1','zvhh':'pct_zvhh','spfam':'pct_spfam_','rentb':'pct_rent50'}
+  'lep':'pct_lep_1','zvhh':'pct_zvhh','spfam':'pct_spfam_','rentb':'pct_rent50'},
 ];
 
 let sel_colorvals, sel_colors, sel_binsflag;
